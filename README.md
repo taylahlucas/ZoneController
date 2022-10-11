@@ -1,10 +1,11 @@
 # ZoneController-React
 A simple interface for a device zone controller.
+Select the zones icon to toggle the zone on and off.
 
-## Assumptions
+### Assumptions
 
 - When no icon is provided for a zone, a default icon will be used.
-- Data will initially be pulled from BE, and will check for updates.
+- Data pulled from data.json is static.
 
 # Setup
 
@@ -18,15 +19,17 @@ npm start
 
 # Packages
 
-## UI packages
+### UI
 
 - @mui/material
 - @emotion/react
 - @emotion/styled
 
-## Utils
+### Utils
 - @prop-types
 - @reduxjs/toolkit
 
 ## Testing
-<!-- - @redux-testkit -->
+
+cd zone-controller
+npm test
