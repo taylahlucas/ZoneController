@@ -16,6 +16,7 @@ const propTypes = {
 }
 
 const defaultProps = {
+    id: 0,
     value: '',
     icon: '',
     enabled: false,

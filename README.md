@@ -12,10 +12,19 @@ Select the zones icon to toggle the zone on and off.
 cd zone-controller
 npm start
 
-# Assets
 
-- For ease of development, icons have been imported from icons8.com.
-- For zones without icons, a default icon has been provided.
+## Testing
+
+cd zone-controller
+npm test
+
+# Folder Navigation
+
+- /components - Reusable components
+- /data - Given sample data in JSON format
+- /services - Redux services
+- /utils - Utility files
+- /__tests__ - Tests for Redux logic
 
 # Packages
 
@@ -29,7 +38,7 @@ npm start
 - @prop-types
 - @reduxjs/toolkit
 
-## Testing
+# Assets
 
-cd zone-controller
-npm test
+- For ease of development, icons have been imported from icons8.com.
+- For zones without icons, a default icon has been provided.

@@ -18,12 +18,7 @@ function App() {
   }
 
   return (
-    <div style={{ 
-      width: '400px', 
-      height: '600px', 
-    }}>
-      <ListView data={zoneData} />
-    </div>
+    <ListView data={zoneData} />
   )
 }
 

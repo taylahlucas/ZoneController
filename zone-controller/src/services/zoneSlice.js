@@ -5,7 +5,7 @@ const initialState = {
 }
 
 const zoneSlice = createSlice({
-    name: 'zoneStatus',
+    name: 'zones',
     initialState: initialState,
     reducers: {
         addZones: (state, action) => {

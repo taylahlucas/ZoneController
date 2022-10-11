@@ -15,16 +15,10 @@ const defaultProps = {
 
 function SizedIcon(props) {
     return (
-        <div style={{ 
-            width: props.width,
-            height: props.height 
-        }}>
+        <div style={{ width: props.width, height: props.height }}>
             {props.image ?
                 <img 
-                    style={{ 
-                        width: props.width,
-                        height: props.height 
-                    }}
+                    style={{ width: props.width, height: props.height }}
                     src={props.image}
                     onClick={props.onClick} />
                 : null
