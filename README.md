@@ -4,6 +4,7 @@ A simple interface for a device zone controller.
 ## Assumptions
 
 - When no icon is provided for a zone, a default icon will be used.
+- Data will initially be pulled from BE, and will check for updates.
 
 # Setup
 

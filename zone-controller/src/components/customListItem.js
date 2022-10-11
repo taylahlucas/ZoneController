@@ -4,8 +4,8 @@ import { ListItem, Divider } from '@mui/material'
 
 import * as Constants from '../utils/constants'
 import SizedIcon from './sizedIcon'
-import store from '../redux/store'
-import { setActive } from '../redux/zoneSlice'
+import store from '../services/store'
+import { setActive } from '../services/zoneSlice'
 
 const propTypes = {
     id: PropTypes.number,
@@ -28,7 +28,7 @@ function CustomListItem(props) {
     const activateZone = (value) => {
         store.dispatch(setActive({ 
             id: props.id, 
-            enabled: value && props.enabled 
+            active: value && props.enabled 
         }))
     }
 

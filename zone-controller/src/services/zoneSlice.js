@@ -19,23 +19,26 @@ const zoneSlice = createSlice({
                 ...state,
                 zones: state.zones.map(item => {
                     if (item.id == action.payload.id) {
-                        return { ...item, status: { running: action.payload.enabled }}
+                        return { ...item, status: { running: action.payload.active }}
                     }
                     return item
                 })
             }
         },
-        // setSuspended: (state, action) => {
-        //     const zoneSlice = state.zoneSlice.find(item => item.id === action.payload.id)
-        //     console.log("setSuspended: ", zoneSlice)
-            // return {
-            //     ...state,
-            //     suspended: action.bool
-            // }
-        // }
+        setSuspended: (state, action) => {
+            return {
+                ...state,
+                zones: state.zones.map(item => {
+                    if (item.id == action.payload.id) {
+                        return { ...item, suspended: action.payload.enabled}
+                    }
+                    return item
+                })
+            }
+        }
     }
 })
 
-export const { addZones, setActive } = zoneSlice.actions
+export const { addZones, setActive, setSuspended } = zoneSlice.actions
 
 export default zoneSlice.reducer

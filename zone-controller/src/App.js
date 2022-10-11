@@ -4,8 +4,8 @@ import ListView from './components/listView'
 
 import { useInterval } from './utils/useInterval'
 import data from './data/data.json'
-import store from './redux/store'
-import { addZones } from './redux/zoneSlice'
+import store from './services/store'
+import { addZones } from './services/zoneSlice'
 
 function App() {
   const zoneData = useSelector(state => state.zoneSlice.zones)
@@ -16,7 +16,8 @@ function App() {
   // }, 5000)
 
   useEffect(() => {
-      getItems()
+    console.log("GETTING ITEMS")
+    getItems()
   }, [])
 
   function getItems() {
