@@ -22,7 +22,7 @@ const propTypes = {
 
 function ListView(props) {
     return (
-        <List>
+        <List style={{ maxHeight: '400px', overflow: 'scroll' }}>
             {props.data.length > 0 ? 
                 props.data.map(item => {      
                     return <CustomListItem 

@@ -1,5 +1,5 @@
 import store from '../services/store'
-import { addZones, setActive, setSuspended } from '../services/zoneSlice'
+import { addZones, setActive } from '../services/zoneSlice'
 
 const data = {
   zones: [
