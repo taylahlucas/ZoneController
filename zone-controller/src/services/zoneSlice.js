@@ -18,7 +18,7 @@ const zoneSlice = createSlice({
             return {
                 ...state,
                 zones: state.zones.map(item => {
-                    if (item.id == action.payload.id) {
+                    if (item.id === action.payload.id) {
                         return { ...item, status: { running: action.payload.active }}
                     }
                     return item
@@ -29,7 +29,7 @@ const zoneSlice = createSlice({
             return {
                 ...state,
                 zones: state.zones.map(item => {
-                    if (item.id == action.payload.id) {
+                    if (item.id === action.payload.id) {
                         return { ...item, suspended: action.payload.enabled}
                     }
                     return item
