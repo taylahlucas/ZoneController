@@ -25,12 +25,26 @@ const zoneSlice = createSlice({
                 })
             }
         },
-        setSuspended: (state, action) => {
+        // TODO: Remove this ? 
+        updatedSuspendedZones: (state, action) => {
             return {
                 ...state,
-                zones: state.zones.map(item => {
-                    if (item.id === action.payload.id) {
-                        return { ...item, suspended: action.payload.enabled}
+                zones: state.zones.map((item, index) => {
+                    if (item.suspended !== action.payload[index].suspended) {
+                        switch (action.payload[index].suspended) {
+                            case false: 
+                                // Change running status if suspended status changes to false
+                                return { 
+                                    ...item, 
+                                    status: { running: false },
+                                    suspended: action.payload[index].suspended,
+                                }
+                            case true:
+                                return { 
+                                    ...item, 
+                                    suspended: action.payload[index].suspended,
+                                }
+                        }
                     }
                     return item
                 })
@@ -39,6 +53,6 @@ const zoneSlice = createSlice({
     }
 })
 
-export const { addZones, setActive, setSuspended } = zoneSlice.actions
+export const { addZones, setActive, updatedSuspendedZones } = zoneSlice.actions
 
 export default zoneSlice.reducer
