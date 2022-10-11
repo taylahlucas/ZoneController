@@ -3,7 +3,7 @@ import List from '@mui/material/List'
 import CustomListItem from './customListItem'
 
 const propTypes = {
-    items: PropTypes.arrayOf(
+    data: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,
             name: PropTypes.string.isRequired,
@@ -23,10 +23,11 @@ const propTypes = {
 function ListView(props) {
     return (
         <List>
-            {props.items ? 
-                props.items.map(item => {           
+            {props.data.length > 0 ? 
+                props.data.map(item => {      
                     return <CustomListItem 
                         key={item.id.toString()}
+                        id={item.id}
                         value={item.name}
                         icon={item.icon.customImage ?? item.icon.fileName}
                         enabled={!item.suspended}

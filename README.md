@@ -3,6 +3,8 @@ A simple interface for a device zone controller.
 
 ## Assumptions
 
+- When no icon is provided for a zone, a default icon will be used.
+
 # Setup
 
 cd zone-controller
@@ -23,3 +25,4 @@ npm start
 
 ## Utils
 - @prop-types
+- @reduxjs/toolkit

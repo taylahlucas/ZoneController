@@ -1,25 +1,35 @@
-import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import PropTypes from 'prop-types'
 import { ListItem, Divider } from '@mui/material'
-import * as Constants from '../data/constants'
+
+import * as Constants from '../utils/constants'
 import SizedIcon from './sizedIcon'
+import store from '../redux/store'
+import { setActive } from '../redux/zoneSlice'
 
 const propTypes = {
+    id: PropTypes.number,
     value: PropTypes.string,
     icon: PropTypes.string,
     enabled: PropTypes.bool,
     active: PropTypes.bool
 }
 
-function CustomListItem(props) {
-    const [isActive, setIsActive] = useState(false)
+const defaultProps = {
+    value: '',
+    icon: '',
+    enabled: false,
+    active: false
+}
 
-    useEffect(() => {
-        setIsActive(props.active && props.enabled)
-    }, [props.enabled])
+function CustomListItem(props) {
+    const isActive = useSelector(state => state.zoneSlice.zones).find(item => item.id === props.id).status.running
 
     const activateZone = (value) => {
-        setIsActive(value && props.enabled)
+        store.dispatch(setActive({ 
+            id: props.id, 
+            enabled: value && props.enabled 
+        }))
     }
 
     return (
@@ -33,7 +43,7 @@ function CustomListItem(props) {
                     justifyContent: 'space-between',
                     fontFamily: 'helvetica'
                 }}
-                disabled={!props.enabled} >
+                disabled={!props.enabled}>
                     <div>
                         <SizedIcon
                             image={props.icon ? `${Constants.ICON_URL}${props.icon}` : Constants.DEFAULT_ICON}
@@ -54,5 +64,6 @@ function CustomListItem(props) {
 }
 
 CustomListItem.propTypes = propTypes
+CustomListItem.defaultProps = defaultProps
 
 export default CustomListItem
