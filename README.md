@@ -10,6 +10,7 @@ Select the zones icon to toggle the zone on and off.
 # Setup
 
 cd zone-controller
+npm install
 npm start
 
 
