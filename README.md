@@ -36,8 +36,10 @@ npm test
 - @emotion/styled
 
 ### Utils
+
 - @prop-types
 - @reduxjs/toolkit
+- @react-test-renderer
 
 # Assets
 

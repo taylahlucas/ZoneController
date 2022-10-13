@@ -45,19 +45,15 @@ function CustomListItem(props) {
                     fontFamily: 'helvetica'
                 }}
                 disabled={!props.enabled}>
-                    <div>
-                        <SizedIcon
-                            image={props.icon ? `${Constants.ICON_URL}${props.icon}` : Constants.DEFAULT_ICON}
-                            onClick={() => activateZone(!isActive)}
-                        />
-                    </div>
-                    <div>{props.value}</div>
-                    <div>
-                        {isActive ?
-                            <SizedIcon image={Constants.ACTIVE_ICON_URL} />
-                            : <SizedIcon />
-                        }
-                    </div>
+                    <SizedIcon
+                        image={props.icon ? `${Constants.ICON_URL}${props.icon}` : Constants.DEFAULT_ICON}
+                        onClick={() => activateZone(!isActive)}
+                    />
+                    <div data-testid="div">{props.value}</div>
+                    {isActive ?
+                        <SizedIcon image={Constants.ACTIVE_ICON_URL} />
+                        : <SizedIcon />
+                    }
             </ListItem>
             <Divider light style={{ width: '70%' }} />
         </div>
