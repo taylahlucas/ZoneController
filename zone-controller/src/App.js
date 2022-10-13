@@ -10,10 +10,10 @@ function App() {
   const zoneData = useSelector(state => state.zoneSlice.zones)
 
   useEffect(() => {
-    getItems()
+    getZones()
   }, [])
 
-  function getItems() {
+  function getZones() {
     store.dispatch(addZones(data.data.controller.zones))
   }
 
