@@ -24,16 +24,14 @@ function ListView(props) {
     return (
         <List style={{ maxHeight: '400px', width: '400px', overflow: 'scroll' }}>
             {props.data.length > 0 ? 
-                props.data.map(item => {      
-                    return <CustomListItem 
-                        key={item.id.toString()}
-                        id={item.id}
-                        value={item.name}
-                        icon={item.icon.customImage ?? item.icon.fileName}
-                        enabled={!item.suspended}
-                        active={item.status.running}
-                    />
-                })
+                props.data.map(item => <CustomListItem 
+                    key={item.id.toString()}
+                    id={item.id}
+                    value={item.name}
+                    icon={item.icon.customImage ?? item.icon.fileName}
+                    enabled={!item.suspended}
+                    active={item.status.running}
+                />)
                 : <div>Loading zones</div>
             }
         </List>

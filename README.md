@@ -1,5 +1,5 @@
 # ZoneController-React
-A simple interface for a device zone controller.
+A simple interface for a device zone controllers read from JSON data.
 Select the zones icon to toggle the zone on and off.
 
 ### Assumptions
@@ -10,9 +10,8 @@ Select the zones icon to toggle the zone on and off.
 # Setup
 
 cd zone-controller
-npm install
+npm run build     // Initial setup
 npm start
-
 
 ## Testing
 
